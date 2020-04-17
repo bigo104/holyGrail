@@ -3,20 +3,20 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-    - id: install node
-    - name: node runner
-      uses: actions/setup-node@v1
-      with:
-        node-version: 13.13
-    - run : npm install
+      - id: install node
+      - name: node runner
+        uses: actions/setup-node@v1
+        with:
+          node-version: 13.13
+      - run : npm install
   job2:
     runs-on: ubuntu-latest
     needs: job1
     steps:
-    - id: lint checker
-    - name: lint inspect
-      uses: actions/checkout@v1
-    - uses: stefanoeb/eslint-action@1.0.2
-      with:
-        files: src/
-    - run: yarn lint
+      - id: lint checker
+      - name: lint inspect
+        uses: actions/checkout@v1
+      - uses: stefanoeb/eslint-action@1.0.2
+        with:
+          files: src/
+      - run: yarn lint
