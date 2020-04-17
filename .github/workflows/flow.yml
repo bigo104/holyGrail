@@ -1,18 +1,23 @@
 on: [push]
 
 jobs:
-  eslint:
-    runs-on: ubuntu-latest
-    steps:
+  runs-on: ubuntu-latest
+  jobs:
+    job1:
+      steps:
+      - id: install node
       - name: node runner
         uses: actions/setup-node@v1
         with:
           node-version: 13.13
+      - run : npm install
+    job2:
+      needs: job1
+      steps:
+      - id: lint checker
       - name: lint inspect
         uses: actions/checkout@v1
       - uses: stefanoeb/eslint-action@1.0.2
         with:
           files: src/
-      - run: |
-          yarn install
-          yarn lint
+      - run: yarn lint
