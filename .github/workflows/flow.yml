@@ -3,20 +3,20 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: node runner
-    - uses: actions/setup-node@v1
-      with:
-        node-version: 13.13
-    - name: npm install, build, and test
-    run : npm install
+      - uses: actions/checkout@v2
+      - name: node runner
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 13.13
+      - name: npm install
+      run : npm install
   job2:
     runs-on: ubuntu-latest
     needs: job1
     steps:
-    - uses: actions/checkout@v1
-    - uses: stefanoeb/eslint-action@1.0.2
-      with:
-        files: src/
-    - name: lint inspect
-    run: yarn lint
+      - uses: actions/checkout@v1
+      - uses: stefanoeb/eslint-action@1.0.2
+        with:
+          files: src/
+      - name: lint inspect
+      run: yarn lint
