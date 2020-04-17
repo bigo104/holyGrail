@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render react base dom component should match first snap shot 1`] = `
+<div>
+  <button
+    onClick={[Function]}
+  >
+    increase clicks 
+    0
+  </button>
+  <p>
+     shit 
+  </p>
+</div>
+`;

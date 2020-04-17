@@ -1,0 +1,32 @@
+
+{
+    "root": true,
+    "extends": ["plugin:react/recommended", "eslint:recommended", "standard"],
+    "plugins": ["react","jest"],
+    "env": {
+      "browser": true,
+      "es6": true,
+      "node": true,
+      "jest": true,
+      "jest/globals": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 2018,
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "sourceType": "module"
+    },
+    "globals":{
+      "Atomics": "readonly",
+      "SharedArrayBuffer": "readonly"
+    },
+    "rules": {
+      "comma-dangle": ["error", "never"],
+      "jest/no-disabled-tests": "warn",
+      "jest/no-focused-tests": "error",
+      "jest/no-identical-title": "error",
+      "jest/prefer-to-have-length": "warn",
+      "jest/valid-expect": "error"
+    }
+}
