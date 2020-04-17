@@ -4,7 +4,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: node runner
-      uses: actions/setup-node@v1
+    - uses: actions/setup-node@v1
       with:
         node-version: 13.13
       run : npm install
@@ -13,8 +13,8 @@ jobs:
     needs: job1
     steps:
     - name: lint inspect
-      uses: actions/checkout@v1
-      uses: stefanoeb/eslint-action@1.0.2
+    - uses: actions/checkout@v1
+    - uses: stefanoeb/eslint-action@1.0.2
       with:
         files: src/
       run: yarn lint
