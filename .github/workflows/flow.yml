@@ -5,7 +5,7 @@ jobs:
     steps:
       - id: install node
       - name: node runner
-        uses: actions/setup-node@v1
+      - uses: actions/setup-node@v1
         with:
           node-version: 13.13
       - run : npm install
@@ -15,7 +15,7 @@ jobs:
     steps:
       - id: lint checker
       - name: lint inspect
-        uses: actions/checkout@v1
+      - uses: actions/checkout@v1
       - uses: stefanoeb/eslint-action@1.0.2
         with:
           files: src/
