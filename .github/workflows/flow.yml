@@ -4,10 +4,16 @@ jobs:
   eslint:
     runs-on: ubuntu-latest
     steps:
+      - name: lint inspect
       - uses: actions/checkout@v1
       - uses: stefanoeb/eslint-action@1.0.2
         with:
           files: src/
+      - name: node runner
+      - uses: actions/setup-node@v1
+        with:
+        n ode-version: 13.13
     run: |
-      yarn run lint
-      yarn run testci
+      yarn install
+      yarn lint
+      yarn testci
