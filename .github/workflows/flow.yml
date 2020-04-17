@@ -16,4 +16,3 @@ jobs:
       - run: |
           yarn install
           yarn lint
-          yarn testci
