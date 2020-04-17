@@ -1,9 +1,7 @@
 on: [push]
-
-jobs:
-  runs-on: ubuntu-latest
   jobs:
     job1:
+      runs-on: ubuntu-latest
       steps:
       - id: install node
       - name: node runner
@@ -12,6 +10,7 @@ jobs:
           node-version: 13.13
       - run : npm install
     job2:
+      runs-on: ubuntu-latest
       needs: job1
       steps:
       - id: lint checker
