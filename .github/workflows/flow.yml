@@ -8,6 +8,7 @@ jobs:
         uses: actions/setup-node@v1
         with: 
           node-version: 13.13
+      - name : install packages  
         run : npm install
   job2:
     runs-on: ubuntu-latest
@@ -17,4 +18,5 @@ jobs:
       - uses: stefanoeb/eslint-action@1.0.2
         with: 
           files: src/
+      - name : install packages      
         run: yarn lint
